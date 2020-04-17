@@ -3,6 +3,7 @@ package com.moer.app;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.moer.api.ApiManager;
 import com.moer.base.IExampleApi;
@@ -23,6 +24,7 @@ public class EmptyActivity extends Activity implements View.OnClickListener {
             case R.id.enter:
                 IExampleApi exampleApi = ApiManager.getInstance().getApi(IExampleApi.class);
                 exampleApi.startExampleActivity(this);
+                Toast.makeText(this, "启动ExampleActivity", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
